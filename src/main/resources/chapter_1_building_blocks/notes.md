@@ -1,6 +1,7 @@
 JDK contains minimum software needed for Java development:
 * key commands / programs (javac, java, jar, javadoc),
 * JVM,
+* compiler,
 * core libraries (e.g. Collections API).
 
 Fields and methods are called the *members* of the class.\
@@ -18,8 +19,21 @@ In a source file *at most one* top-level type is allowed to be public and it's n
 For example: a file containing `public class Animal` and `class Animal2` must be called Animal.java.
 
 To compile a Java program use the `javac ClassName.java` command. To run a Java program, use the `java ClassName` command.\
+Shortcut for compiling single-file Java programs: `java ClassName.java`\
+To pass some arguments to the program, use the `java ClassName Param1 Param2 "Third Param"` command.\
 The `javac` command - based on a source code - produces a bytecode saved in .class files. The bytecode is understandable by the JVM.
 
 `String[] args` is the most common way to define the parameter for the `main` method. But you can choose different method\
 name or use varargs instead of an array. So it can also be written as e.g. `String[] options`, `String options[]`, `String... friends`.
 
+If a package name starts with 'java' then this package came bundled with the JDK.\
+Every class from the `java.lang` package is automatically imported. There's no need for importing classes from this package.\
+Classes from the same package also don't have to be imported.\
+A class imported explicitly takes precedence over any wildcards present. For example for a Date class:
+* `import java.util.*; import java.sql.*;` - wrong, class name found in multiple packages,
+* `import java.util.Date; import java.sql.Date;` - wrong, ambiguous class name,
+* `import java.util.Date; import java.sql.*;` - correct, Date class from the java.util package will be used.
+
+Compiling classes from the `pl.mariuszk.chapter_1_building_blocks.packages` package:\
+`javac pl/mariuszk/chapter_1_building_blocks/packages/packagea/*.java pl/mariuszk/chapter_1_building_blocks/packages/packageb/*.java`\
+Running the program compiled above: `java pl/mariuszk/chapter_1_building_blocks/packages/packageb/ClassB`
