@@ -37,3 +37,13 @@ A class imported explicitly takes precedence over any wildcards present. For exa
 Compiling classes from the `pl.mariuszk.chapter_1_building_blocks.packages` package:\
 `javac pl/mariuszk/chapter_1_building_blocks/packages/packagea/*.java pl/mariuszk/chapter_1_building_blocks/packages/packageb/*.java`\
 Running the program compiled above: `java pl/mariuszk/chapter_1_building_blocks/packages/packageb/ClassB`
+
+Options available to use with `java` and `javac`:
+![java_javac_options.jpg](imgs%2Fjava_javac_options.jpg)
+You can specify multiple class path resources separated with ';' on Windows or ':' on macOS/Linux.\
+For example: `-cp ".;C:\temp\location;C:\temp\jar\myJar.jar"`
+
+Options available to use with `jar`:
+![jar_options.jpg](imgs%2Fjar_options.jpg)
+Creating a jar file: `jar -cvf myJar.jar .`, `jar --create --verbose --file myJar.jar .`
+
