@@ -47,3 +47,40 @@ Options available to use with `jar`:
 ![jar_options.jpg](imgs%2Fjar_options.jpg)
 Creating a jar file: `jar -cvf myJar.jar .`, `jar --create --verbose --file myJar.jar .`
 
+The order of initialization in a class:
+* Fields and instance initializers are run in the order in which they appear in the file,
+* The constructor runs after all fields and instance initializer blocks have run.
+
+Java has eight built-in data types (primitive types):
+![primitive_types.jpg](imgs%2Fprimitive_types.jpg)
+Bit size of boolean data type is not specified and depends on the JVM where the code is being executed.
+
+For numeric literals I can use different formats:
+* decimal - standard,
+* octal - 0 prefix,
+* hexadecimal - 0x or 0X prefix,
+* binary - 0b or 0B prefix.
+
+I can use underscores with numeric literals to make them easier to read, e.g. 1_000_000. Underscores can't be added at the\
+beginning of a literal, the end of a literal, right before/after a decimal point. Multiple underscores can be placed next to each other.
+
+Remember: primitive types will give you a compiler error if you attempt to assign null to them.
+
+Wrapper classes for primitive types:
+
+| Primitive type | Wrapper class | Wrapper class inherits Number? |
+|----------------|---------------|--------------------------------|
+| boolean        | Boolean       | No                             |
+| byte           | Byte          | Yes                            |
+| short          | Short         | Yes                            |
+| int            | Integer       | Yes                            |
+| long           | Long          | Yes                            |
+| float          | Float         | Yes                            |
+| double         | Double        | Yes                            |
+| char           | Character     | No                             |
+
+Each wrapper class offers a `valueOf(primitiveType)` method to convert primitive type to an object.\
+There is also a `valueOf(String)` variant that converts String into the wrapper class instance, e.g. `Integer.valueOf("123")`.\
+Except `Character`, every wrapper class offers a `parse*(String)` method that converts String into a corresponding 
+primitive type, .e.g. `Double.parseDouble("123.33")`.
+
