@@ -84,3 +84,22 @@ There is also a `valueOf(String)` variant that converts String into the wrapper 
 Except `Character`, every wrapper class offers a `parse*(String)` method that converts String into a corresponding 
 primitive type, .e.g. `Double.parseDouble("123.33")`.
 
+Text blocks:\
+Also known as multiline strings.\
+See `TextBlocks` class.
+
+Rules for legal identifiers (e.g. variables names):
+* identifiers must begin with a letter, a currency symbol or an underscore,
+* identifiers can include numbers but not start with them,
+* identifiers can consist only of letters, digits, currency symbols and underscores,
+* a single underscore is not a valid identifier,
+* you cannot use Java reserved words.
+
+Local variables are variables defined in constructors, methods, initializer blocks.\
+`final` keyword can be applied to both local variables and local variable references like so:\
+`final int = 10;`\
+`final int[] arr = new int[10];`\
+The value of local variables cannot be modified.\
+The value of the reference of local variable references also cannot be modified.\
+For example: `arr = null;` is illegal, but `arr[0] = 3;` is perfectly legal.
+
