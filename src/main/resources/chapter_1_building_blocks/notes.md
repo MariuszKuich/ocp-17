@@ -101,5 +101,22 @@ Local variables are variables defined in constructors, methods, initializer bloc
 `final int[] arr = new int[10];`\
 The value of local variables cannot be modified.\
 The value of the reference of local variable references also cannot be modified.\
-For example: `arr = null;` is illegal, but `arr[0] = 3;` is perfectly legal.
+For example: `arr = null;` is illegal, but `arr[0] = 3;` is perfectly legal.\
+Local variables do not have a default value and must be initialized before use.\
+On the other hand, instance and class variables are provided with default values if they're not initialized. The default value
+is null for objects, zero for numeric types, false for boolean, '\u0000' for char (see table 1.6).
+
+`var` (local variable type inference) can be used instead of the type when declaring local variables.\
+Key information about var:
+* it can only be used with local variables,
+* underneath it is a specific type defined at compile time, it does not change at runtime,
+* value for var needs to be assigned during declaration, this is not legal: `var a; a = 1;`,
+* null for var is not allowed,
+* it cannot be used to declare multiple variables in a single line, like: `var a = 1, b = 3;`,
+* it cannot be used with method/constructor parameters,
+* var is not a reserved word - it is allowed to use it as an identifier. It cannot be used to name a class, an interface or an enum.
+However, it can be used as a package name,a  method name, a local variable name. Also, Java is case-sensitive, so 
+`Var` class name is perfectly legal.
+
+Local variables are valid only in the scope of a block they're defined in. They can also be accessed from inner blocks.
 
