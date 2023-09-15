@@ -19,5 +19,7 @@ public class TextBlocks {
                  "This is a text block"
                      Hello World!
                 """;
+        // Illegal text block - a new line after first """ is required
+//        String illegalStr = """test""";
     }
 }

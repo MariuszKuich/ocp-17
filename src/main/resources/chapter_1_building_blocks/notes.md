@@ -112,11 +112,22 @@ Key information about var:
 * underneath it is a specific type defined at compile time, it does not change at runtime,
 * value for var needs to be assigned during declaration, this is not legal: `var a; a = 1;`,
 * null for var is not allowed,
-* it cannot be used to declare multiple variables in a single line, like: `var a = 1, b = 3;`,
+* it cannot be used in multiple variable declarations, like: `var a = 1, b = 3;`,
 * it cannot be used with method/constructor parameters,
 * var is not a reserved word - it is allowed to use it as an identifier. It cannot be used to name a class, an interface or an enum.
 However, it can be used as a package name,a  method name, a local variable name. Also, Java is case-sensitive, so 
 `Var` class name is perfectly legal.
 
-Local variables are valid only in the scope of a block they're defined in. They can also be accessed from inner blocks.
+Scope is a portion of code where a variable can be accessed.\
+Local variables are valid only in the scope of a block they're defined in (starting from the line they're defined at). 
+They can also be accessed from inner blocks.\
+Instance variables are available as soon as they are defined and last for the entire lifetime of an object 
+(until an object is eligible for garbage collection).\
+Class variables are available from the moment of their declaration and stay in the scope for the entire life of a program.
+
+Garbage collection is a process of automatically freeing memory on the heap by deleting objects that are no longer reachable in a program.\
+Garbage collector is one of the processes running inside JVM.\
+`System.gc()` - suggestion of running a garbage collector\
+An object is not reachable if it no longer has any references pointing to it or all references to the objects have gone out of scope.\
+Objects do not have names. References to objects have names.
 
