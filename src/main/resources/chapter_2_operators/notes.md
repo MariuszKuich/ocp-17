@@ -20,3 +20,20 @@ Increment and decrement operators:
 
 Arithmetic binary operators: +, -, *, /, %.\
 When parentheses are added to an operation, values are evaluated starting from the innermost parentheses.
+
+Java numeric promotion rules (see TypePromotion class):
+* If two values have different data types, Java will automatically promote one of the values to the larger of the two data types,
+* If one of the values is integral and the other is floating-point, Java will automatically promote the integral value to the
+floating point's value data type,
+* Smaller data types - byte, short, char - are first promoted to int any time they're used with a Java binary arithmetic operator
+with a variable (as opposed to a value), even if neither of the operands is int,
+* After all promotion has occurred and the operands have the same data type, the resulting value will have the same data type 
+as its promoted operands.
+
+When assigning values to variables, Java will automatically promote from smaller to larger (or widening) data types.\
+Converting from larger to smaller (or narrowing) data types requires casting (as a risk of precision loss is present).\
+Casting - unary operation where one data type is explicitly interpreted as another data type.\
+Casting a numeric value may change the data type, casting an object only changes the reference to the object, not the object itself.\
+
+Compiler automatically detects if a literal value is too large to be assigned to a variable, e.g. `short a = 1921222`.\
+It can be fixed with casting: `short a = (short)1921222`.
