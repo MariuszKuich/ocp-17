@@ -37,3 +37,25 @@ Casting a numeric value may change the data type, casting an object only changes
 
 Compiler automatically detects if a literal value is too large to be assigned to a variable, e.g. `short a = 1921222`.\
 It can be fixed with casting: `short a = (short)1921222`.
+
+Compound assignment operators: +=, -=, *=, /=.\
+An assignment operation does two things: it sets the value for a variable and returns the value of the assignment. For example:
+`long wolf = 5; long coyote = (wolf = 3);` is valid and sets the value for both variables to 3.\
+Equality operators: ==, !=.\
+Relational operators: <, <=, >, >=, instanceof.
+
+instanceof - returns true if the reference on the left side is an instance of the type on the right side (class, interface,
+record, enum, annotation). It supports polymorphism.\
+It is considered a good practice to use instanceof prior to casting from one object to a narrower type.\
+Important note: if the compiler can determine that a variable cannot possibly be cast to a specific class, it reports and error
+(see InstanceOf class).\
+Calling instanceof on the null literal or a null reference always returns false.
+
+Logical operators:
+* & - value is true only if both values are true,
+* | - value is true if at least one of the values is true,
+* ^ - value is true only if one value is true and the other is false.
+
+Logical operators can be applied to both numeric and boolean data types.\
+When applied to boolean data types, they're referred to as logical operators.\
+When applied to numeric data types, they're referred to a bitwise operators.
