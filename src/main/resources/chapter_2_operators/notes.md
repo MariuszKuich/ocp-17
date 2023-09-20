@@ -59,3 +59,14 @@ Logical operators:
 Logical operators can be applied to both numeric and boolean data types.\
 When applied to boolean data types, they're referred to as logical operators.\
 When applied to numeric data types, they're referred to a bitwise operators.
+
+Conditional operators (support short-circuiting): 
+* && - if the left side is false, then the right side will not be evaluated,
+* || - if the left side is true, then the right side will not be evaluated.
+
+Ternary operator: `? :`.\
+The first operand must be a boolean expression, the second and third operands can be any expression that returns a value.\
+The second and third expressions in ternary operations can have different data types. For example the following is valid:
+`int stripes = 7; System.out.println(stripes > 5 ? 21 : "Zebra");`.\
+Ternary operations must be used in statements. The following is not valid: `stripes > 5 ? a++ : b++;`. This is valid: 
+`int c = stripes > 5 ? a++ : b++;`.
