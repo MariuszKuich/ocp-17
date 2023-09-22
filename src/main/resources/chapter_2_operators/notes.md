@@ -70,3 +70,10 @@ The second and third expressions in ternary operations can have different data t
 `int stripes = 7; System.out.println(stripes > 5 ? 21 : "Zebra");`.\
 Ternary operations must be used in statements. The following is not valid: `stripes > 5 ? a++ : b++;`. This is valid: 
 `int c = stripes > 5 ? a++ : b++;`.
+
+Key things to remember after chapter 2 exam:
+* compound assignment operators (+=, -=, *=, /=) automatically apply casting, so e.g. `int ticketsSold += (long)1;` is valid,
+* to find the bitwise complement of a number (`~variable`), multiply it by negative one and then subtract one,
+* When assigning values to variables, Java will automatically promote from smaller to larger (or widening) data types.\
+Converting from larger to smaller (or narrowing) data types requires casting (as a risk of precision loss is present).\
+This means that the following is valid: `double a = 10L;` and the following is not: `long b = 10.0;`.
