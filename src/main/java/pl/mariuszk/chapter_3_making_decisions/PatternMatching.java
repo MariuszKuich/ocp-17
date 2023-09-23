@@ -28,6 +28,13 @@ public class PatternMatching {
         }
     }
 
+    //An example of flow scoping - the compiler can definitively determine the 'data' variable type
+    void printOnlyIntegers(Number number) {
+        if (!(number instanceof Integer data))
+            return;
+        System.out.println(data.intValue());
+    }
+
     /*
     The type of the pattern variable must be a subtype of the variable on the left side of the expression.
     It cannot be of the same type. This rule does not exist for traditional 'instanceof' operator.
