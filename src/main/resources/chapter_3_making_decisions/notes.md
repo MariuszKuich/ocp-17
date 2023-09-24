@@ -24,4 +24,11 @@ Rules for values or variables used in `case` statements:
 `case getCookies():` and the following is legal `case 3 * 5:`.
 
 Since Java 14 switch expressions can be used. They are more compact form of switch statements and can return a value.
-Two types of branches can be used with the switch expression: an expression and a block (see SwitchExpression class).
+Two types of branches can be used with the switch expression: an expression and a block (see SwitchExpression class).\
+Java 17 supports pattern matching with switch expressions but it's a preview feature.\
+`yield` keyword in switch expressions is used to avoid ambiguity about whether you want to exit the `case` block or 
+the method around the `switch` expression.
+
+While loop:\
+Curly braces are required for blocks of multiple statements, optional for single statement.\
+`while` loops are often used in places where you expect zero or more executions of the loop.
