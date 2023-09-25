@@ -32,3 +32,27 @@ the method around the `switch` expression.
 While loop:\
 Curly braces are required for blocks of multiple statements, optional for single statement.\
 `while` loops are often used in places where you expect zero or more executions of the loop.
+
+Do-while loop:\
+Curly braces are required for blocks of multiple statements, optional for single statement.\
+Do-while loop guarantees that the statement / block will be executed at least once.
+
+For loop:\
+Curly braces are required for blocks of multiple statements, optional for single statement.\
+`for (initialization; booleanExpression; updateStatement)`\
+The initialization and update sections may contain multiple statements, separated by commas.\
+Each of the above sections is optional. Semicolons are always required.
+
+Interesting variations of `for` loops:
+* an infinite loop `for ( ; ; )`,
+* multiple terms `for (long y = 0, z = 4; y < 10 && z < 15; y++, z++)`,
+* redeclaring a variable in the initialization block `int x = 0; for (int x = 4; x < 5; x++) //DOES NOT COMPILE, 
+CAN BE FIXED WITH for (x = 4; ...`,
+* using incompatible data types `int x = 0; for (long y = 0, int z = 4; x < 5; x++) //DOES NOT COMPILE` - the variables
+in the initialization block must all be of the same type.
+
+For-each loop (enhanced for loop):\
+`for (datatype instance: collection)`\
+A collection must be a built-in Java array or an object whose type implements `java.lang.Iterable`.\
+This means that not all of the Collection Framework classes can be used with the for-each loop. Only collections that 
+extend or implement the `Collection` interface can be used (a `Map` is not one of such collections).
