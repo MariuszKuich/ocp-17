@@ -60,3 +60,14 @@ extend or implement the `Collection` interface can be used (a `Map` is not one o
 `if` statements, `switch` statements, blocks and loops can have labels assigned to them. A label is an optional pointer to the head
 of the statement that allows the application to jump to it or break from it. For example: `LOOP: for(int i = 0; i < 5; i++)`.
 (see `Labels` class).
+
+Any code placed immediately after `break`, `continue` and `return` statement in the same block is considered unreachable 
+and will not compile.
+
+|          | Support labels | Support break | Support continue | Support yield |
+|----------|----------------|---------------|------------------|---------------|
+| while    | YES            | YES           | YES              | NO            |
+| do/while | YES            | YES           | YES              | NO            |
+| for      | YES            | YES           | YES              | NO            |
+| switch   | YES            | YES           | NO               | YES           |
+
