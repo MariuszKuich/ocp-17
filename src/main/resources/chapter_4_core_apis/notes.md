@@ -16,5 +16,21 @@ A `char` can be passed to an `int` parameter type,
 `substring(1, str.length() + 1)` throws an Exception,
 * `toUpperCase()`,
 * `toLowerCase()`,
-* `equals()`,
-* `equalsIgnoreCase()`
+* `equals(Object)`,
+* `equalsIgnoreCase(String)`,
+* `startsWith(String)`,
+* `endsWith(String)`,
+* `contains(CharSequence)`,
+* `replace(char, char)`, `replace(CharSequence, CharSequence)`,
+* `strip()`, `trim()` for removing whitespaces, `strip` supports Unicode,
+* `stripLeading()` for removing whitespaces from the beginning of a String,
+* `stripTrailing()` for removing whitespaces from the end of a String,
+* `indent(int)` - if argument > 0 - it adds n spaces to the beginning of each line. If argument < 0 - it removes up to n spaces
+from each line. If argument == 0 - there's no change. It also normalizes exiting line breaks (\r\n -> n) and adds a line break 
+at the end of the String if it's missing,
+* `stripIndent()` - it removes all leading incidental whitespace. It also normalizes exiting line breaks,
+* `translateEscapes()` - `System.out.println("1\\t2".translateEscapes())` outputs `1    2`,
+* `isEmpty()`,
+* `isBlank()` - checks if a String contains only whitespace characters,
+* formatting methods (see `Strings` class).
+
