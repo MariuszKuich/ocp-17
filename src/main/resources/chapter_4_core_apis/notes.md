@@ -34,3 +34,17 @@ at the end of the String if it's missing,
 * `isBlank()` - checks if a String contains only whitespace characters,
 * formatting methods (see `Strings` class).
 
+StringBuilder creates a String without storing any interim String values in memory. Unlike the String class, StringBuilder
+is not immutable.\
+Three ways to construct a StringBuilder:\
+`new StringBuilder()` - SB containing an empty sequence of characters\
+`new StringBuilder("animal")` - SB containing a specific value\
+`new StringBuilder(10)` - SB should reserve a certain capacity, or number of slots, for characters
+
+Important StringBuilder methods:
+* `substring`, `indexOf`, `length`, `charAt` - these methods work exactly the same as in the String class,
+* `append(String/int/char/...)` - it adds the parameter to the StringBuilder and returns a reference to the current SB instance,
+* `insert(int offset, String str)` - it adds characters to the StringBuilder at the requested index and returns a reference 
+to the current SB instance; it has lots of method signatures for different data types,
+* `delete(int startIdx, int endIdx)`, `deleteCharAt(int idx)` -  it removes characters from the sequence 
+and returns a reference to the current SB instance
