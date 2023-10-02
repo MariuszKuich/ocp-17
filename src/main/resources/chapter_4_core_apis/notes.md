@@ -47,4 +47,13 @@ Important StringBuilder methods:
 * `insert(int offset, String str)` - it adds characters to the StringBuilder at the requested index and returns a reference 
 to the current SB instance; it has lots of method signatures for different data types,
 * `delete(int startIdx, int endIdx)`, `deleteCharAt(int idx)` -  it removes characters from the sequence 
-and returns a reference to the current SB instance
+and returns a reference to the current SB instance (endIdx value can be greater than the String length),
+* `replace(int startIdx, int endIdx, String newString)` - endIdx is exclusive; Java deletes characters starting at startIdx
+and ending right before the endIdx and inserts the newString value in that position (endIdx value can be greater than the String length),
+* `reverse()`,
+* `toString()` - converts StringBuilder object to a String object.
+
+StringBuilder doesn't override the equals() method - calling equals() on two StringBuilder objects will check 
+reference equality (using ==).
+
+Check the `StringPool` class.
