@@ -57,3 +57,18 @@ StringBuilder doesn't override the equals() method - calling equals() on two Str
 reference equality (using ==).
 
 Check the `StringPool` class.
+
+Arrays:\
+Most common way of creating an array: `int[] numbers = new int[3]`. All elements are set to the default value for the
+specified type.\
+Another way of creating an array: `int[] numbers = new int[] {21, 88, 37}`.\
+A shortcut (anonymous array): `int[] numbers = {21, 88, 37}`.\
+Brackets `[]` can be placed before or after the variable name, optionally with additional space. All of the following is valid:\
+`int[] numbers`\
+`int [] numbers`\
+`int []numbers`\
+`int numbers[]`\
+`int numbers []`\
+Multiple arrays in declarations:\
+`int[] ids, types` - this creates two variables of type `int[]`.\
+`int ids[], types` - this creates one variable of type `int[]` and one of type `int`.
