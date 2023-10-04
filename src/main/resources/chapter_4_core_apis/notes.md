@@ -72,3 +72,28 @@ Brackets `[]` can be placed before or after the variable name, optionally with a
 Multiple arrays in declarations:\
 `int[] ids, types` - this creates two variables of type `int[]`.\
 `int ids[], types` - this creates one variable of type `int[]` and one of type `int`.
+
+`equals()` method used on arrays checks the reference equality, it does not look at the elements of the array.\
+Nice array printing: `Arrays.toString(arr)`.\
+Arrays do not allocate space for objects, they allocate space for references to objects.\
+Casting arrays: `String[] strArr = (String[]) new Object[] {"a", "b"}`.
+
+Sorting arrays: `Arrays.sort(arr)`.
+
+Searching elements: `Arrays.binarySearch(arr, searchedElement)`. An array need to be sorted for a binary search.\
+A binary search splits the array into two equal peaces and determines which half the target is in. It repeats this process
+until only one element is left.
+
+Binary search rules:
+
+| Scenario                                 | Result                                                                                                                         |
+|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Target element found in sorted array     | Index of match                                                                                                                 |
+| Target element not found in sorted array | Negative value showing one smaller than the negative of the index, where a match needs to be inserted to preserve sorted order |
+| Unsorted array                           | This result is undefined (output is unpredictable, random)                                                                     |
+
+When using `compare()`:\
+A negative number means the first array is smaller than the second.\
+A zero means the arrays are equal.\
+A positive number means the first array is bigger than the second.
+
