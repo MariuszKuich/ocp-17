@@ -92,8 +92,46 @@ Binary search rules:
 | Target element not found in sorted array | Negative value showing one smaller than the negative of the index, where a match needs to be inserted to preserve sorted order |
 | Unsorted array                           | This result is undefined (output is unpredictable, random)                                                                     |
 
-When using `compare()`:\
+When using `Arrays.compare(arr1, arr2)`:\
 A negative number means the first array is smaller than the second.\
 A zero means the arrays are equal.\
 A positive number means the first array is bigger than the second.
 
+`compare()` method rules:
+* both arrays are the same length & have the same values in each spot - return 0,
+* both arrays have the same elements but the second array has an extra element at the end - return -1,
+* both arrays have the same elements but the first array has an extra element at the end - return 1,
+* if the first element that differs is smaller in the fist array - return -1,
+* if the first element that differs is larger in the first array - return 1.
+
+When an element is smaller than the other element?
+* null is smaller than anything,
+* for numbers, normal numeric order applies,
+* for string, one is smaller if it's a prefix of another,
+* for strings/characters, numbers are smaller than letters & uppercase is smaller than lowercase.
+
+When using `Arrays.compare(arr1, arr2)` both arrays must be of the same type.
+
+`Arrays.mismatch(arr1, arr2)` - if the arrays are equal, -1 is returned. Otherwise, the first index where they differ is returned.
+
+Ways to create a two-dimensional array:\
+`int[][] arr`\
+`int arr[][]`\
+`int[] arr[]`\
+Multidimensional arrays can contain arrays of different lengths, e.g.: `int[][] arr = {{1, 4}, {6}, {1, 2, 3}}`.\
+Another example: `int[][] arr = new int [2][]; arr[0] = new int[5]; arr[1] = new int[3];`.
+
+Math API:\
+Important Math API methods (pay attention to data types accepted and returned by these methods):
+* `static double min(double a, double b)`, `static float min(float a, float b)`, 
+`static int min(int a, int b)`,`static long min(long a, long b)`,
+* `static double max(double a, double b)`, `static float max(float a, float b)`,
+`static int max(int a, int b)`,`static long max(long a, long b)`,
+* `static long round(double n)`, `static int round(float n)` - gets rid of the decimal portion of the value rounding
+up (if the fractional part is .5 or higher) or down (if the fractional part is less than .5),
+* `double ceil(double num)` - number is rounded up to the next whole number,
+* `double floor(double num)` - any values after the decimal are discarded,
+* `double pow(double number, double exponent)`,
+* `static double random()` - returns a random value greater than or equal to 0 and less than 1.
+
+Dates and Times:\
