@@ -135,3 +135,29 @@ up (if the fractional part is .5 or higher) or down (if the fractional part is l
 * `static double random()` - returns a random value greater than or equal to 0 and less than 1.
 
 Dates and Times:\
+`java.time.*`\
+`LocalDate` - contains a date, no time and no time zone.\
+`LocalTime` - contains a time, no date and no time zone.\
+`LocalDateTime` - contains both a date and time, no time zone.\
+`ZonedDateTime` - contains a date, time and time zone.\
+Each of these classes offers a static `now()` method.
+
+To get UTC equivalent of the zoned time, subtract the time zone from the time. For example:\
+06:50+5:30 [Asia/Kolkata] -> UTC 01:20\
+07:50-5:00 [US/Eastern] -> UTC 12:50
+
+See `DatesAndTimes` class.
+
+Date and time classes are immutable. Methods that manipulate dates and times return a new instance:
+
+| Scenario                      | Can call on LocalDate? | Can call on LocalTime? | Can call on LocalDateTime or ZonedDateTime? |
+|-------------------------------|------------------------|------------------------|---------------------------------------------|
+| plusYears(), minusYears()     | Yes                    | No                     | Yes                                         |
+| plusMonths(), minusMonths()   | Yes                    | No                     | Yes                                         |
+| plusWeeks(), minusWeeks()     | Yes                    | No                     | Yes                                         |
+| plusDays(), minusDays()       | Yes                    | No                     | Yes                                         |
+| plusHours(), minusHours()     | No                     | Yes                    | Yes                                         |
+| plusMinutes(), minusMinutes() | No                     | Yes                    | Yes                                         |
+| plusSeconds(), minusSeconds() | No                     | Yes                    | Yes                                         |
+| plusNanos(), minusNanos()     | No                     | Yes                    | Yes                                         |
+
