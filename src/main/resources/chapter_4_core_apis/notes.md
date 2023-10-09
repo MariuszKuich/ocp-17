@@ -161,3 +161,4 @@ Date and time classes are immutable. Methods that manipulate dates and times ret
 | plusSeconds(), minusSeconds() | No                     | Yes                    | Yes                                         |
 | plusNanos(), minusNanos()     | No                     | Yes                    | Yes                                         |
 
+The `Instant` class represents a specific moment in time in the GMT timezone (UTC).
