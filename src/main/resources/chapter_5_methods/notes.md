@@ -2,10 +2,12 @@ Method signature = method name + types and order of parameters
 
 Access modifier must be specified before the return type.\
 Available access modifiers : 
-* private, 
-* protected (subclass + same package), 
-* public, 
-* package-private (default if no access modifier is specified)
+* private - only accessible within a class, 
+* package-private (default if no access modifier is specified) - `private` + other members of the same package, 
+* protected - `package-privte` + subclasses, 
+* public - `protected` + classes in other packages
+
+Watch out for tricky scenarios with `protected` access modifier. See `chapter_5_methods.access_modifiers` package.
 
 Access modifiers and optional specifiers can appear in any order but they must all appear before the return type.\
 The following is valid: `final public void test()`.\
