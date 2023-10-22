@@ -48,3 +48,18 @@ Creating methods with varargs (e.g. `String... args`):
 * if a method contains a varargs parameter, it must be the last parameter in the list.
 
 See `Varargs` class.
+
+When the `static` keyword is applied to a variable / method / class, it belongs to the class rather than a specific
+member of the class.\
+Static methods have two main purposes: for utility or helper methods that don't require any object state and for state
+that is shared by all instances of a class (like a counter).\
+See `Static` class for a tricky example.\
+Static variables (as well as instance variables) are automatically initialized to the default value for that type 
+(e.g. 0 for int).\
+In classes, static methods cannot call instance methods. Similarly, in interfaces a static methods cannot call default
+methods.
+
+constants = `static` + `final` variables\
+Naming convention for constants: uppercase letters with underscores between words (regardless of access modifier).\
+`static final` variables _must_ be initialized on variable declaration or inside a static initializer (see `Static` class).
+
