@@ -63,3 +63,16 @@ constants = `static` + `final` variables\
 Naming convention for constants: uppercase letters with underscores between words (regardless of access modifier).\
 `static final` variables _must_ be initialized on variable declaration or inside a static initializer (see `Static` class).
 
+Static initializers are run when the class is first loaded in the order they are defined.
+
+Regular imports are for importing classes while static imports are for importing static members of classes like variables
+and methods.\
+Doing a static import of two methods with the same name or two variables with the same name gives a compiler error.\
+Creating a method with the same name as statically imported method makes that Java gives it preference over the imported one
+and the explicitly defined method is used.
+
+Java is a "pass-by-value" language. See `PassingObjects` class.
+
+Autoboxing is the process of converting a primitive into its equivalent wrapper class.\
+Unboxing is the process of converting a wrapper class into its equivalent primitive.\
+See `Autoboxing` class.
