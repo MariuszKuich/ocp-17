@@ -75,4 +75,17 @@ Java is a "pass-by-value" language. See `PassingObjects` class.
 
 Autoboxing is the process of converting a primitive into its equivalent wrapper class.\
 Unboxing is the process of converting a wrapper class into its equivalent primitive.\
-See `Autoboxing` class.
+See `Autoboxing` class.\
+Unboxing a null value gives a NullPointerException.
+
+Method overloading is when methods in the same class have the same name but different method signatures (they use different
+parameter lists).\
+Overloaded methods can have different access modifiers, optional specifiers, return types and exception lists.\
+See `Overloading` class.
+
+Because of backwards compatibility, autoboxing and varargs come last when Java looks at overloaded methods.\
+Example of what will be chosen for `glide(1, 2)`:
+1. Exact match by type `String glide(int i, int j)`
+2. Larger primitive type `String glide(long i, long j)`
+3. Autoboxed type `Stiring glide(Integer i, Integer j)`
+4. Varargs `String glide(int... nums)`
