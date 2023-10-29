@@ -20,3 +20,17 @@ Java supports single inheritance. All objects in Java inherit from `java.lang.Ob
 In a .java file there can be **at most** one `public` top-level class. A file can contain many other classes 
 with package-private access. Declaring a top-level class with `protected` or `private` access modifier will lead to compiler error.\
 See `ClasAccessModifiers` class.
+
+`this` keyword can be used to access any member of the class, including inherited members.\
+A variable or a method can be defined in both a parent class and a child class. This means the object instance can hold
+two copies of the same variable with the same underlying name.\
+Parent values can be accessed using the `super` keyword.\
+`this` includes current and inherited members, `super` only includes inherited members.\
+Declaring a variable with the same name as an inherited variable is referred to as _hiding_ a variable.\
+See `this_super.Beetle` class.
+
+_Constructor overloading_ is defining multiple constructors with different signatures (same name, different parameter lists).
+It is similar to _method overloading_.\
+The compiler only inserts the default no-args constructor when no constructors are defined in the class.\
+Private constructor is useful when a class has only static members or when the developer wants to control instantiating a class.
+
