@@ -34,3 +34,14 @@ It is similar to _method overloading_.\
 The compiler only inserts the default no-args constructor when no constructors are defined in the class.\
 Private constructor is useful when a class has only static members or when the developer wants to control instantiating a class.
 
+When `this()` with parentheses is used, Java calls another constructor on the same instance of the class.\
+`this()` call must be the first statement in the constructor. Therefore, there can be only one call to `this()` in any 
+constructor (comments are allowed since they are not statements).\
+Java does not allow cyclic constructor calls - a constructor cannot call itself with `this(...)`.
+
+The fist statement of _every_ constructor is a call to a parent constructor using `super()` or another constructor in the 
+class using `this()`.\
+Java compiler automatically inserts a call to the no-argument constructor `super()` if there's no explicit call to `this()`
+or `super()` as the first line of a constructor.\
+See `Donkey` class.\
+`super()` can only be used as the first statement of the constructor.
