@@ -44,4 +44,20 @@ class using `this()`.\
 Java compiler automatically inserts a call to the no-argument constructor `super()` if there's no explicit call to `this()`
 or `super()` as the first line of a constructor.\
 See `Donkey` class.\
-`super()` can only be used as the first statement of the constructor.
+`super()` can only be used as the first statement of the constructor.\
+`super()` always refers to the most direct parent.
+
+JVM decides when the class is loaded (or initialized): it may be initialized when the program starts, when a static member 
+of the class is referenced or shortly before an instance of the class is created.\
+Initialization happens _at most once_ for each class.
+
+The process of class initialization:
+* superclasses are initialized first (starting with the highest superclass and working downward),
+* all `static` variable declarations are processed in order in which they appear in the class,
+* all `static` initializers are processed in order in which they appear in the class.
+
+`final` fields are not initialized with the default value by the compiler.\
+By the time the constructor completes, all `final` instance variables must be assigned a value exactly once. This is different
+from `final` local variables which must be assigned a value only if they are used.\
+`null` can be assigned to `final` instance variables as long as they are explicitly set.
+
