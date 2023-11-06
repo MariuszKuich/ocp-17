@@ -59,5 +59,27 @@ The process of class initialization:
 `final` fields are not initialized with the default value by the compiler.\
 By the time the constructor completes, all `final` instance variables must be assigned a value exactly once. This is different
 from `final` local variables which must be assigned a value only if they are used.\
-`null` can be assigned to `final` instance variables as long as they are explicitly set.
+`null` can be assigned to `final` instance variables as long as they are explicitly set.\
+`static final` fields must be assigned a value when they are declared or in static initializer.\
+`final` fields must be assigned a value when they are declared, in instance initializer or in constructor.
+
+The process of instance initialization:
+* initialize the class if it wasn't initialized yet,
+* if the class has a superclass, initialize the instance of the superclass first,
+* process all instance variable declarations in the order in which they appear in the class,
+* process all instance initializers in the order in which they appear in the class,
+* initialize the constructor including any overloaded constructors referenced with `this()`
+
+In Java, overriding a method is when  a subclass declares a new implementation for an inherited method with the same signature
+and compatible return type.\
+A parent version of the overridden method can still be referenced using the `super` keyword.\
+Overriding methods is an example of polymorphism.
+
+Rules for overriding a method:
+* the method in the child class must have the same signature as the method in the parent class,
+* the method in the child class must be at least as accessible as the method in the parent class,
+* the method in the child class may not declare a checked exception that is new or broader than the class of any exception
+declared in the parent class method (but an overridden method can declare any number of new unchecked exceptions),
+* (for methods which return a value) the return type of the child class method must be the same or a subtype of the 
+return type of the parent class method (_covariant return types_)
 
