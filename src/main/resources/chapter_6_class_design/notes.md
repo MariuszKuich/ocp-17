@@ -81,5 +81,33 @@ Rules for overriding a method:
 * the method in the child class may not declare a checked exception that is new or broader than the class of any exception
 declared in the parent class method (but an overridden method can declare any number of new unchecked exceptions),
 * (for methods which return a value) the return type of the child class method must be the same or a subtype of the 
-return type of the parent class method (_covariant return types_)
+return type of the parent class method (_covariant return types_), for example `String` is a subtype of `CharSequence`
+
+`@Override` annotation prevents from making mistakes when overriding methods (if the compiler doesn't see an inherited 
+method that is being overridden, it reports an error).
+
+Private methods from superclasses cannot be overridden (since they cannot be inherited) but they can be redeclared - 
+a child class can define its own version of the method - the new method is not an overridden version of the parent class.\
+For example: superclass can have `private String getSize()` method and child class can redeclare it as 
+`private int getSize()` - these are separate methods.
+
+`static` methods cannot be overridden, but they can be hidden.\
+A hidden method occurs when a child class defines a static method with the same signature as a static method in the parent class.\
+4 rules for overriding methods must be followed when a method is hidden.\
+There's also an additional fifth rule: the child class method must be marked as `static` if it is marked as `static` in the parent class. 
+
+Put simply:\
+Two methods are marked as `static` = method hiding\
+Two methods are not marked as `static` = method overriding\
+One method is marked as `static` and the other is not = the code does not compile
+
+Variables on the other hand cannot be overridden, but they can be hidden.\
+A hidden variable occurs when a child class defines a variable with the same name as an inherited variable from the parent class.\
+This creates two distinct variables existing independently. Which variable is used depends on the reference type.\
+See `VariableHiding` class.
+
+Overriding a method replaces the parent method on all reference variables.\
+Hiding a method / variable replaces the member only if a child reference type is used.
+
+`final` methods cannot be overridden or hidden, but if they are `private`, they can be redeclared.
 
