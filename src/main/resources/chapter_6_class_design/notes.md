@@ -111,3 +111,12 @@ Hiding a method / variable replaces the member only if a child reference type is
 
 `final` methods cannot be overridden or hidden, but if they are `private`, they can be redeclared.
 
+Abstract class is a class that cannot be instantiated directly and can contain abstract methods.\
+Abstract method is a method that does not define a body. Subclasses are forced to override such method.\
+Overriding an abstract method follows the existing rules for overriding methods.\
+Like `final` modifier, `abstract` modifier can be placed before or after the access modifier.\
+Marking a method as both `final` and `abstract` ends with a compiler error.
+
+An abstract class can extend a concrete class and vice versa. Anytime a concrete class is extending an abstract class,
+it must implement all of the methods that are inherited as abstract.
+
