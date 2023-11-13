@@ -114,9 +114,21 @@ Hiding a method / variable replaces the member only if a child reference type is
 Abstract class is a class that cannot be instantiated directly and can contain abstract methods.\
 Abstract method is a method that does not define a body. Subclasses are forced to override such method.\
 Overriding an abstract method follows the existing rules for overriding methods.\
-Like `final` modifier, `abstract` modifier can be placed before or after the access modifier.\
-Marking a method as both `final` and `abstract` ends with a compiler error.
+Like `final` modifier, `abstract` modifier can be placed before or after the access modifier.
+
+Marking a method or a class as both `final` and `abstract` ends with a compiler error.\
+Marking a method as both `abstract` and `private` or `abstract` and `static` does not compile as well.
 
 An abstract class can extend a concrete class and vice versa. Anytime a concrete class is extending an abstract class,
 it must implement all of the methods that are inherited as abstract.
+
+Constructors in abstract classes - see `Platypus` class.
+
+An immutable object is one that cannot change state after it is created.\
+Making a class immutable:
+* mark the class as `final` or make all of the constructors `private`,
+* mark all the instance variables `private` and `final`,
+* don't define any setter methods,
+* don't expose getter method for mutable instance fields e.g. for lists,
+* set all properties of the object in the constructor, make copies of parameters if needed.
 
