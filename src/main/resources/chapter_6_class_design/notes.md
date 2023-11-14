@@ -126,9 +126,10 @@ Constructors in abstract classes - see `Platypus` class.
 
 An immutable object is one that cannot change state after it is created.\
 Making a class immutable:
-* mark the class as `final` or make all of the constructors `private`,
+* mark the class as `final` or make all of the constructors `private` - it prevents from creating mutable subclasses,
 * mark all the instance variables `private` and `final`,
-* don't define any setter methods,
+* don't define any setter methods - it ensures (together with the point above) that no changes to instance variables are made,
 * don't expose getter method for mutable instance fields e.g. for lists,
 * set all properties of the object in the constructor, make copies of parameters if needed.
 
+See `ImmutableObjects` class.
