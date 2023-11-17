@@ -29,3 +29,12 @@ Interface member types:
 _class_ membership means a member is shared along all instances of the interface.\
 _instance_ membership means a member is associated with a particular instance of the interface.
 
+Default interface method _may optionally_ be overridden by a class implementing the interface.\
+Default method cannot be marked as `abstract`, `static` or `final`.\
+If a class inherits two or more `defaut` methods with the same signature, then the class must override the method.\
+See `DefaultMethods` file.
+
+Static interface method cannot be marked as `abstract` or `final`.\
+Static interface method cannot be accessed in a class implementing the interface without the reference to the interface name.
+It can also be accesses in classes that do not implement the interface (referencing the interface name).
+
