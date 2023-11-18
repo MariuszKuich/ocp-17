@@ -38,3 +38,8 @@ Static interface method cannot be marked as `abstract` or `final`.\
 Static interface method cannot be accessed in a class implementing the interface without the reference to the interface name.
 It can also be accesses in classes that do not implement the interface (referencing the interface name).
 
+Private methods were added to interfaces primarily to reduce code duplication.\
+`default` and `private` non-static interface methods can access `abstract` methods defined in the interface.
+
+An _enumeration_ (or _enum_ for short) is a fix set of constants.\
+See `EnumExample` class.
