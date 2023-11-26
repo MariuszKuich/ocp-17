@@ -43,3 +43,11 @@ Private methods were added to interfaces primarily to reduce code duplication.\
 
 An _enumeration_ (or _enum_ for short) is a fix set of constants.\
 See `EnumExample` class.
+
+Enum methods:
+* `values()` - retrieves an array of all values,
+* `name()` - returns string name of the value,
+* `ordinal()` - returns ordinal number of the value (starts with 0, depends on the declaration order),
+* `valueOf()` - retrieves an enum value from a String.
+
+See `ComplexEnumExample` class.
