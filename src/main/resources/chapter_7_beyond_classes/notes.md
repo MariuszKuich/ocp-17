@@ -51,3 +51,15 @@ Enum methods:
 * `valueOf()` - retrieves an enum value from a String.
 
 See `ComplexEnumExample` class.
+
+A _sealed class_ is a class that restricts which other classes may **directly** extend it. These are new to Java 17.\
+See `SealedClass` class.\
+Important rule #1: a sealed class needs to be declared in the same package or named module as its direct subclasses.\
+Important rule #2: each subclass declared after the `permits` keyword must extend the sealed class.\
+Important rule #3: each subclass extending a sealed class needs to be `final`, `sealed` or `non-sealed`.\
+Important rule #4: `permits` keyword can be omitted if sealed class and subclasses are in the same file. This rule also 
+applies to sealed classes with nested subclasses.
+
+Interfaces can also be sealed and many of the rules for classes apply for them.\
+Key difference #1: `permits` list can contain classes that implement the interface or interfaces that extend the interface.\
+Key difference #2: interfaces extending a sealed interface can be marked as `sealed` or `non-sealed`, but not as `final`.
