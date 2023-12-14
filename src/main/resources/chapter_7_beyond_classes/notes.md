@@ -82,7 +82,19 @@ Records can contain:
 A _nested class_ is a class defined within another class. We distinguish:
 * inner class - a non-static type (class / interface / enum / record / annotation) defined at the member level of a class,
 * static nested class - a static type defined at the member level of a class,
-* local class - a class defined within a method body,
+* local class - a class defined within a method / constructor / instance initializer body,
 * anonymous class - a special case of a local class that does not have a name.
 
-See `InnerClass` file.
+See `InnerClass` file.\
+Inner classes can have the same variable names as outer class.
+
+Static nested classes can be instantiated without an instance of the enclosing class, however they can't access instance 
+members of the enclosing class.
+
+Local classes:
+* do not have access modifier,
+* can be declared `final` or `abstract`,
+* have access to all members of the enclosing class when defined in an instance method,
+* can access `final` and effectively final local variables.
+
+See `LocalClass` file.

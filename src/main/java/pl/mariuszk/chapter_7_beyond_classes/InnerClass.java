@@ -23,6 +23,22 @@ public class InnerClass {
         }
     }
 
+    // an example of referencing members of inner classes
+    class A {
+        private int x = 10;
+        class B {
+            private int x = 20;
+            class C {
+                private int x = 30;
+                void printAllX() {
+                    System.out.println("C: " + this.x);
+                    System.out.println("B: " + B.this.x);
+                    System.out.println("A: " + A.this.x);
+                }
+            }
+        }
+    }
+
     void test() {
         var ice = new InnerClassExample();
         ice.greet();
@@ -35,7 +51,11 @@ public class InnerClass {
         System.out.println("---");
 
         // instantiating an inner class
-        var ice = ic.new InnerClassExample(); // wtf is this
+        InnerClass.InnerClassExample ice = ic.new InnerClassExample(); // wtf is this
         ice.greet();
+
+        System.out.println("---");
+        A.B.C abc = new InnerClass().new A().new B().new C();
+        abc.printAllX();
     }
 }
