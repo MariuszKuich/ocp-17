@@ -98,3 +98,35 @@ Local classes:
 * can access `final` and effectively final local variables.
 
 See `LocalClass` file.
+
+An anonymous class is declared and instantiated all in one statement using:
+* `new` keyword,
+* type name with parentheses,
+* set of braces.
+
+Anonymous classes must extend an existing class or implement an existing interface.\
+See `AnonymousClass` file.\
+Anonymous class is just a local class without a name.
+
+Nested classes summary:
+
+| Permitted modifiers | Inner class | `static` nested class | Local class  | Anonymous class |
+|---------------------|-------------|-----------------------|--------------|-----------------|
+| Access modifiers    | All         | All                   | None         | None            |
+| `abstract`          | Yes         | Yes                   | Yes          | No              |
+| `final`             | Yes         | Yes                   | Yes          | No              |
+
+| Permitted modifiers                                       | Inner class | `static` nested class | Local class                             | Anonymous class                         |
+|-----------------------------------------------------------|-------------|-----------------------|-----------------------------------------|-----------------------------------------|
+| Can extend a class or implement any number of interfaces? | Yes         | Yes                   | Yes                                     | No                                      |
+| Can access instance members of the enclosing class?       | Yes         | No                    | Yes (if declared in an instance method) | Yes (if declared in an instance method) |
+| Can access local variables of enclosing method?           | N/A         | N/A                   | Yes (if `final` or effectively final)   | Yes (if `final` or effectively final)   |
+
+Polymorphism
+
+Java object may be accessed using:
+* a reference with the same type as the object,
+* a reference that is a superclass of the object,
+* a reference that defines an interface the object implements or inherits.
+
+A cast is not required if the object is being reassigned to a supertype or an interface it implements.
