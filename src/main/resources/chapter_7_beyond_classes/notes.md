@@ -129,4 +129,11 @@ Java object may be accessed using:
 * a reference that is a superclass of the object,
 * a reference that defines an interface the object implements or inherits.
 
-A cast is not required if the object is being reassigned to a supertype or an interface it implements.
+A cast is not required if the object is being reassigned to a supertype or an interface it implements.\
+Reassigning to a subtype requires an explicit cast. The subtype must be compatible with the object or 
+a `ClassCastException` will be thrown at runtime.\
+The compiler disallows casts to unrelated types.
+
+The type of the object determines which properties exist within the object in memory.\
+The type of the reference to the object determines which methods and variables are available to the Java program.
+
