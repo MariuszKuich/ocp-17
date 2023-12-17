@@ -137,3 +137,8 @@ The compiler disallows casts to unrelated types.
 The type of the object determines which properties exist within the object in memory.\
 The type of the reference to the object determines which methods and variables are available to the Java program.
 
+The `instanceof` operator also cannot be used with unrelated types.
+
+Remember: when a method is overridden, all calls to it are replaced, even these defined in the parent class.\
+On the other hand, hiding members (applies to `static` methods and fields) is sensitive to the reference type and 
+the location where the member is used.
