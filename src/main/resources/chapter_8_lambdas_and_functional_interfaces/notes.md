@@ -22,3 +22,14 @@ If a functional interface includes an abstract method with the same signature as
 `public boolean equals(Object)`, `public int hashCode()`).\
 See `FunctionalInterfaces` file.
 
+A method reference can be used when a lambda expression is used only for passing a parameter to another method (but
+a method reference doesn't have to take any parameters).\
+An example: `s -> System.out.println(s)` = `System.out::println`
+
+There are four formats of method references:
+* `static` methods (e.g. `Math::round` - `round` is a static method),
+* instance methods on a particular object (e.g. `str::startsWith`, `str::isEmpty`),
+* instance methods on a parameter that will be supplied at runtime (e.g. `String::isEmpty` - `isEmpty` is an instance method),
+* constructors
+
+See `MethodReferences` file.
