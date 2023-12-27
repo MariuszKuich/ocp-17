@@ -30,6 +30,23 @@ There are four formats of method references:
 * `static` methods (e.g. `Math::round` - `round` is a static method),
 * instance methods on a particular object (e.g. `str::startsWith`, `str::isEmpty`),
 * instance methods on a parameter that will be supplied at runtime (e.g. `String::isEmpty` - `isEmpty` is an instance method),
-* constructors
+* constructors (e.g. `String::new`)
 
 See `MethodReferences` file.
+
+Built-in functional interfaces:\
+Below table contains basic built-in functional interfaces from the `java.util.function` package.
+
+| Functional interface | Return type | Method name | # of parameters |
+|----------------------|-------------|-------------|-----------------|
+| Supplier <T>         | T           | get()       | 0               |
+| Consumer<T>          | void        | accept(T)   | 1               |
+| BiConsumer<T,U>      | void        | accept(T,U) | 2               |
+| Predicate<T>         | boolean     | test(T)     | 1               |
+| BiPredicate<T,U>     | boolean     | test(T,U)   | 2               |
+| Function<T,R>        | R           | apply(T)    | 1               |
+| BiFunction<T,U,R>    | R           | apply(T,U)  | 2               |
+| UnaryOperator<T>     | T           | apply(T)    | 1               |
+| BinaryOperator<T>    | T           | apply(T,T)  | 2               |
+
+See `BuiltInFunctionalInterfaces` file.
