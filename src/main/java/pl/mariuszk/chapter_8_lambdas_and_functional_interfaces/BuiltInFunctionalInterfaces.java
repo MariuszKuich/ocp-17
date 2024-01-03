@@ -60,7 +60,7 @@ class BuiltInFunctionalInterfaces {
         BinaryOperator<Integer> bo1 = Integer::sum;
         BinaryOperator<Integer> bo2 = (i1, i2) -> i1 + i2;
         System.out.println(bo1.apply(1, 1));
-        System.out.println(bo1.apply(2, 2));
+        System.out.println(bo2.apply(2, 2));
     }
 }
 
