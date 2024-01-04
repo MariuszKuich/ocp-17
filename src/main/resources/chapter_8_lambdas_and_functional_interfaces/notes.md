@@ -66,18 +66,26 @@ See `ConvenienceMethods` file.
 
 Functional interfaces for primitives:
 
-| FunctionalInterface | Return type | Single abstract method | Number of parameters |
-|---------------------|-------------|------------------------|----------------------|
-| BooleanSupplier     | boolean     | getAsBoolean           | 0                    |
-| DoubleSupplier      | double      | getAsDouble            | 0                    |
-| IntSupplier         | int         | getAsInt               | 0                    |
-| LongSupplier        | long        | getAsLong              | 0                    |
-| DoubleConsumer      | void        | accept                 | 1 (double)           |
-| IntConsumer         | void        | accept                 | 1 (int)              |
-| LongConsumer        | void        | accept                 | 1 (long)             |
-| DoublePredicate     | boolean     | test                   | 1 (double)           |
-| IntPredicate        | boolean     | test                   | 1 (int)              |
-| LongPredicate       | boolean     | test                   | 1 (long)             |
-| DoubleFunction<R>   | R           | apply                  | 1 (double)           |
-| IntFunction<R>      | R           | apply                  | 1 (int)              |
-| LongFunction<R>     | R           | apply                  | 1 (long)             |
+| FunctionalInterface  | Return type | Single abstract method | Number of parameters |
+|----------------------|-------------|------------------------|----------------------|
+| BooleanSupplier      | boolean     | getAsBoolean           | 0                    |
+| DoubleSupplier       | double      | getAsDouble            | 0                    |
+| IntSupplier          | int         | getAsInt               | 0                    |
+| LongSupplier         | long        | getAsLong              | 0                    |
+| DoubleConsumer       | void        | accept                 | 1 (double)           |
+| IntConsumer          | void        | accept                 | 1 (int)              |
+| LongConsumer         | void        | accept                 | 1 (long)             |
+| DoublePredicate      | boolean     | test                   | 1 (double)           |
+| IntPredicate         | boolean     | test                   | 1 (int)              |
+| LongPredicate        | boolean     | test                   | 1 (long)             |
+| DoubleFunction<R>    | R           | apply                  | 1 (double)           |
+| IntFunction<R>       | R           | apply                  | 1 (int)              |
+| LongFunction<R>      | R           | apply                  | 1 (long)             |
+| DoubleUnaryOperator  | double      | applyAsDouble          | 1 (double)           |
+| IntUnaryOperator     | int         | applyAsInt             | 1 (int)              |
+| LongUnaryOperator    | long        | applyAsLong            | 1 (long)             |
+| DoubleBinaryOperator | double      | applyAsDouble          | 2 (double, double)   |
+| IntBinaryOperator    | int         | applyAsInt             | 2 (int, int)         |
+| LongBinaryOperator   | long        | applyAsLong            | 2 (long, long)       |
+
+Variables with Lambdas - see `VariablesWithLambdas` file.
