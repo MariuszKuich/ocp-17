@@ -2,6 +2,7 @@ package pl.mariuszk.chapter_8_lambdas_and_functional_interfaces;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class VariablesWithLambdas {
 
@@ -26,5 +27,13 @@ public class VariablesWithLambdas {
 //            int x = 3;
 //            System.out.println(x + y);
 //        };
+
+        // Lambdas are allowed to reference some variables from the surrounding code - instance / class variables,
+        // method parameters, local variables. Instance and class variables are always allowed. Method parameters
+        // and local variables need to be final or effectively final.
+        String name = "John";
+        Supplier<String> cn =  () -> name;
+        // The following line causes compiler error on line 35 - local variable 'name' is not effectively final anymore.
+//        name = "Jon";
     }
 }
