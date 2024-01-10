@@ -23,4 +23,13 @@ Factory method for creating a `List`:\
 `List.copyOf(collection)` - returns an immutable list with a copy of original collection's values. 
 Elements cannot be added, replaced or deleted.
 
+`List` interface contains methods for:\
+adding a new element - `add(element)`\
+adding a new element at index - `add(index, element)`\
+retrieving an element at index - `get(index)`\
+removing an element at index - `remove(index)`\
+replacing every element in a list with a result of an operator - `replaceAll(unaryOperator)`\
+replacing an element at index - `set(index, element)`\
+sorting using comparator - `sort(comparator)`
+
 See `Lists` file.
