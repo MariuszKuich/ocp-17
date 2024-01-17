@@ -67,3 +67,31 @@ if something goes wrong):
 * removing from top: `pop()`
 * getting first element without removing it: `peek()`
 
+`Map`:\
+`TreeMap` is sorted, `HashMap` is not.\
+`HashMap` stores the keys in a hash table. Adding and retrieving elements by key both have constant time. 
+Elements lose the insertion order. It can be fixed with `LinkedHashMap`.\
+`TreeMap` stores keys in a sorted tree structure. Keys are always in sorted order (e.g. alphabetically for strings). 
+Adding and retrieving elements by key takes longer as the tree grows.
+
+Basic `Map` methods:
+* removes all keys and values: `clear()`
+* returns whether map contains key: `containsKey(Object key)`
+* returns whether map contains value: `containsValue(Object value)`
+* returns set of key/value pairs: `entrySet()`
+* loops through key/value pairs and applies biConsumer to them: `forEach(BiConsumer<K,V> biConsumer)`
+* returns value for key or null if not found: `get(Object key)`
+* returns value for key or default value: `getOrDefault(Object key, V defaultValue)`
+* returns whether map is empty: `isEmpty()`
+* returns set of keys: `keySet()`
+* sets value if key is not set; runs function if key is set to determine new value; removes entry if value is null: 
+`merge(K key, V value, BiFunction<V, V, V> func)`
+* adds/replaces key/value pair; returns previous value or null: `put(K key, V value)`
+* adds value if key is not set; returns existing value if key is set: `putIfAbsent(K key, V value)`
+* removes and returns value mapped to key: `remove(Object key)`
+* replaces value for key if it is set and returns original value: `replace(K key, V value)`
+* replaces each value with results of function: `replaceAll(BiFunction<K, V, V> func)`
+* returns number of entries in map: `size()`
+* returns Collection of values: `values()`
+
+See `Maps` file.
