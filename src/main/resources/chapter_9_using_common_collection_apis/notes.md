@@ -64,7 +64,7 @@ See `Sets` file.
 `Dequeue` can also be used as a stack (LIFO - last-in, first-out) with these methods (first two methods throw exceptions
 if something goes wrong):
 * adding to top: `push(E)`
-* removing from top: `pop()`
+* removing from top: `pop()`+
 * getting first element without removing it: `peek()`
 
 `Map`:\
@@ -84,7 +84,8 @@ Basic `Map` methods:
 * returns value for key or default value: `getOrDefault(Object key, V defaultValue)`
 * returns whether map is empty: `isEmpty()`
 * returns set of keys: `keySet()`
-* sets value if key is not set; runs function if key is set to determine new value; removes entry if value is null: 
+* sets value if key is not set (missing or null); runs function if key is set to determine new value (existing value 
+and new value are passed to the function) - removes entry if computed value is null: 
 `merge(K key, V value, BiFunction<V, V, V> func)`
 * adds/replaces key/value pair; returns previous value or null: `put(K key, V value)`
 * adds value if key is not set; returns existing value if key is set: `putIfAbsent(K key, V value)`
