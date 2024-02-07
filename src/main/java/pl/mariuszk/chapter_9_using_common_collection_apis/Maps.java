@@ -3,7 +3,6 @@ package pl.mariuszk.chapter_9_using_common_collection_apis;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.function.IntToDoubleFunction;
 
 public class Maps {
 

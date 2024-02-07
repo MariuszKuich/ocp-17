@@ -96,3 +96,12 @@ and new value are passed to the function) - removes entry if computed value is n
 * returns Collection of values: `values()`
 
 See `Maps` file.
+
+Sorting data:\
+For numbers, order is a numerical order.\
+For String objects, order is defined by Unicode character mapping (numbers come before letters, uppercase letters
+come before the lowercase letters).\
+For custom objects there is a `Comparable` interface.\
+There's also a `Comparator` class that allows to specify a different order than the object itself provides.
+
+See `ComparableExample` file.
