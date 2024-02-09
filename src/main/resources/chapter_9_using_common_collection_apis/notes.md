@@ -105,3 +105,11 @@ For custom objects there is a `Comparable` interface.\
 There's also a `Comparator` class that allows to specify a different order than the object itself provides.
 
 See `ComparableExample` file.
+
+`compareTo()` and `equals()` method should be consistent - `x.equals(y)` is true whenever `x.compareTo(y)` equals 0 .
+
+`Comparator` is helpful when sorting objects that do not implement `Comparable` or when objects need to be sorted 
+in different ways at different times.\
+See `ComparatorExample` file.\
+`Comparable` is in `java.lang` package, while `Comparator` in `java.util` package. This means that `Comparator` 
+needs to imported before use.
